@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naseem Ahamad, Ph.D. - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header .title {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .objective {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .publication {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .publication:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .publication .authors {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .publication .title {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .publication .journal {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .experience-item .position {
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .duration {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .award-item {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .reference-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .reference-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .reference-item p {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .memberships {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .membership-item {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Naseem Ahamad, Ph.D.</h1>
+            <div class="title">School of Life Sciences, JNU, New Delhi</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>naseem.ahamad.uthscsa@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+91-8130780782 (India)</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>210-564-4104 (USA/WhatsApp)</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <div class="objective">
+                    I am a highly motivated and accomplished researcher with a deep passion for stem cell and molecular biology, calcium signaling, autoimmune diseases such as Sjögren's syndrome, and immunology. My strong track record includes comprehensive investigations into stem cell dynamics, immune responses in various disease conditions, and the complexities of viral and bacterial infections. I am eager to apply my diverse skill set and enthusiasm for translational research to make meaningful contributions to your ongoing research and to expand my knowledge in a collaborative and dynamic research environment.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Publications</h2>
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Ahamad, N*</span>, Prakash C., Kumar, P., Majaw. T. (2025)</div>
+                    <div class="title">Role of Mitochondria and its Functions in Animal Diseases</div>
+                    <div class="journal">Under preparation. * Corresponding author</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="authors">Navaeiseddighi Z, Schmit T, Wang Z, <span class="highlight">Ahamad N</span>, Hasan SS, Guo K, Combs C, Khan N (2025)</div>
+                    <div class="title">The vaccine dosing effect overcomes the reduced immunogenic potential and in vivo efficacy of 33F pneumococcal serotype</div>
+                    <div class="journal">Vaccine, Volume 54, 2025, 126983, ISSN 0264-410X</div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors">Chaudhary J.K., <span class="highlight">Ahamad N.</span>, Rath P.C. (2024)</div>
+                    <div class="title">Mesenchymal stem cells (MSCs) from the mouse bone marrow show differential spatio-temporal expression of Interferon Regulatory Factors (IRF-1 and IRF-2)</div>
+                    <div class="journal">Mol Biol Rep. 2024 Jan 9;51(1):97. PMID: 38194130</div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors">Guo K, Yombo DJK, Wang Z, Navaeiseddighi Z, Xu J, Schmit T, <span class="highlight">Ahamad N</span>, Tripathi J, De Kumar B, Mathur R, Hur J, Sun J, Olszewski MA, Khan N (2024)</div>
+                    <div class="title">The chemokine receptor CXCR3 promotes CD8+ T cell-dependent lung pathology during influenza pathogenesis</div>
+                    <div class="journal">Sci Adv. 2024 Jan 5;10(1): eadj1120. PMID: 38170765</div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Ahamad, N*.</span> Gupta, S., Parashar, D. (2022)</div>
+                    <div class="title">Using Omics to Study Leprosy, Tuberculosis, and Other Mycobacterial Diseases</div>
+                    <div class="journal">Front Cell Infect Microbiol 2022 Feb 24;12:792617. PMID: 35281437 * Corresponding author</div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Ahamad, N.</span> Sun, Y., Da Conceicao, RD Caroline Regina Delma, Natarajan M, Singh, B. B. (2021)</div>
+                    <div class="title">Differential activation of Ca2+ influx channels modulate stem cell potency, their proliferation/viability and tissue regeneration</div>
+                    <div class="journal">NPJ Regen Med 2021 Oct 20;6(1):67. PMID: 34671058</div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Ahamad, N.</span> Sun, Y, Singh B. B. (2021)</div>
+                    <div class="title">Increasing cytosolic Ca2+ levels restore cell proliferation and stem cell potency in aged MSCs</div>
+                    <div class="journal">Stem Cell Res 2021 Oct;56:102560 PMID: 34624617</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <div class="position">Post-Doctoral Fellow</div>
+                    <div class="duration">2019-2021, 2023-2024</div>
+                    <h3>University of Texas Health Science Center, San Antonio, USA</h3>
+                    <p>Applied Ph.D. experience and earned expertise in stem cells, calcium, calcium channels, signaling, and salivary gland regeneration. Focused on treating neurological diseases such as Parkinson's, Alzheimer's, and amyotrophic lateral sclerosis (ALS) using hematopoietic stem cell-derived macrophage transplantation to deliver neurotrophic factors and protect neuron death due to aging.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="position">Post-Doctoral Fellow</div>
+                    <div class="duration">2021-2023</div>
+                    <h3>University of Florida, Gainesville, Florida, USA</h3>
+                    <p>Worked on IAV infection and discovered the role of CD8 T cells during lung pathology and pneumonia infection. This work has been published with additional research under communication.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Ph.D. in Stem Cell Biology and Molecular Biology</h3>
+                    <div class="duration">December 2017</div>
+                    <p><strong>Institution:</strong> Jawaharlal Nehru University (JNU), New Delhi</p>
+                    <p><strong>Thesis:</strong> "Bone marrow regeneration in the mouse using bone marrow-derived stem cells"</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>M.Sc. in Microbiology</h3>
+                    <div class="duration">July 2009 (70.50%)</div>
+                    <p><strong>Institution:</strong> Gurukul Kangri Vishvavidyalya, Hardwar, UK</p>
+                    <p><strong>Thesis:</strong> "Detection of single nucleotide polymorphism in TLR-9 gene of T.B. patient and their healthy contacts by BiPASA technique"</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>B.Sc. in Zoology, Botany, and Chemistry</h3>
+                    <div class="duration">July 2004 (63.44%)</div>
+                    <p><strong>Institution:</strong> DAV College Muzaffar Nagar (CCS University Meerut), UP</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Specific Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Stem Cells & Cell Culture</h3>
+                        <ul class="skill-list">
+                            <li>Mouse bone marrow-derived mesenchymal stem cells (mMSCs)</li>
+                            <li>Human salivary gland-derived stem cells (hSGSCs)</li>
+                            <li>Cell lines: THP-1, HEK-293, HeLa, 293FT, S.H.-SY5Y</li>
+                            <li>Colony-forming Unit-Fibroblast (CFU-Fs) assay</li>
+                            <li>MTT assay, BrdU proliferation assay</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Flow Cytometry & FACS</h3>
+                        <ul class="skill-list">
+                            <li>MSC characterization (CD29, CD44, Sca-1)</li>
+                            <li>Hematopoietic stem cell analysis</li>
+                            <li>Cell cycle analysis</li>
+                            <li>Calcium level analysis</li>
+                            <li>Cell sorting and engraftment studies</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Molecular Biology</h3>
+                        <ul class="skill-list">
+                            <li>RNA/DNA isolation and quantification</li>
+                            <li>Real-Time RT-PCR</li>
+                            <li>Western Blotting, SDS-PAGE</li>
+                            <li>Gene silencing by siRNA</li>
+                            <li>Primer designing and cDNA preparation</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Animal Models & Techniques</h3>
+                        <ul class="skill-list">
+                            <li>Mouse breeding and maintenance</li>
+                            <li>Animal perfusion and dissection</li>
+                            <li>Bone marrow transplantation</li>
+                            <li>Disease model development</li>
+                            <li>Pneumonia infection models</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Programming & Data Science</h3>
+                        <ul class="skill-list">
+                            <li>R and RStudio</li>
+                            <li>Python programming and Jupyter Notebooks</li>
+                            <li>Power BI and Tableau</li>
+                            <li>NumPy, Pandas, Matplotlib, Seaborn</li>
+                            <li>AWS, Azure, VMware</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Statistical Analysis</h3>
+                        <ul class="skill-list">
+                            <li>Descriptive statistics</li>
+                            <li>Hypothesis testing (chi-square, t-test)</li>
+                            <li>ANOVA and p-value calculations</li>
+                            <li>SPSS, Sigma plot, Microsoft Excel</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Awards & Honors</h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <strong>Post-doctoral Fellow</strong><br>
+                        November 2019 – November 2024
+                    </div>
+                    <div class="award-item">
+                        <strong>DBT-Research Associate Fellowship</strong><br>
+                        July 2019 – November 2019
+                    </div>
+                    <div class="award-item">
+                        <strong>Best Poster Award</strong><br>
+                        BIOSPARKS 2017
+                    </div>
+                    <div class="award-item">
+                        <strong>UGC-Senior Research Fellowship (SRF)</strong><br>
+                        July 2013 – July 2016
+                    </div>
+                    <div class="award-item">
+                        <strong>UGC-Junior Research Fellowship (JRF)</strong><br>
+                        July 2011 – July 2013
+                    </div>
+                    <div class="award-item">
+                        <strong>GATE Qualified</strong><br>
+                        2009, 2010, 2011
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Professional Memberships</h2>
+                <div class="memberships">
+                    <div class="membership-item">
+                        <strong>American Society of Gene & Cell Therapy (ASGCT)</strong><br>
+                        Membership ID: 87170
+                    </div>
+                    <div class="membership-item">
+                        <strong>Society of Biological Chemists (SBC), India</strong><br>
+                        Life Member ID: 3330
+                    </div>
+                    <div class="membership-item">
+                        <strong>Association of Gerontology India (AGI)</strong><br>
+                        Life Member ID: L/16/698-B
+                    </div>
+                    <div class="membership-item">
+                        <strong>International Society of Computational Biology (ISCB)</strong><br>
+                        Membership ID: 10190
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>References</h2>
+                <div class="references-grid">
+                    <div class="reference-item">
+                        <h3>Prof. Brij B Singh, Ph.D.</h3>
+                        <p>University of Texas Health Science Center at San Antonio</p>
+                        <p>7703 Floyd Curl Drive, San Antonio, TX 78229-3900</p>
+                        <p><strong>Phone:</strong> 210-567-3798</p>
+                        <p><strong>Email:</strong> singhbb@uthscsa.edu</p>
+                    </div>
+
+                    <div class="reference-item">
+                        <h3>Prof. Pramod C. Rath, Ph.D.</h3>
+                        <p>Ph.D. Supervisor</p>
+                        <p>Molecular Biology Laboratory, School of Life Sciences</p>
+                        <p>Jawaharlal Nehru University (JNU), New Delhi-110067</p>
+                        <p><strong>Phone:</strong> +91-11-26704525</p>
+                        <p><strong>Email:</strong> pramod.rath@gmail.com</p>
+                    </div>
+
+                    <div class="reference-item">
+                        <h3>Dr. Jitendra Kr. Chaudhary, Ph.D.</h3>
+                        <p>Assistant Professor</p>
+                        <p>Department of Zoology, Shivaji College</p>
+                        <p>University of Delhi, New Delhi-110027</p>
+                        <p><strong>Phone:</strong> +91 9953585599</p>
+                        <p><strong>Email:</strong> jnujitendra@gmail.com</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <p><strong>Languages:</strong> English, Hindi</p>
+                    <p style="margin-top: 10px; font-style: italic;">
+                        "I declare that the above-given information is accurate and correct to the best of my knowledge. I assure you that I will render my duties to the best and satisfaction of my superior."
+                    </p>
+                    <p style="margin-top: 15px;">
+                        <strong>Date:</strong> May 03, 2025 &nbsp;&nbsp;&nbsp; <strong>Place:</strong> New Delhi
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
